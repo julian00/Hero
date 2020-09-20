@@ -20,4 +20,4 @@ Route::get('/', function () {
 Route::get('/home/{name}',function($name){
     return view('home',['name'=>$name]);
     //return "esto es home. Hola ".$name." bienvenido";
-});
+})->where('name', '[A-Za-z]+');
