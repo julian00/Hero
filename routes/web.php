@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home/{name}',function($name){
+Route::get('/admin/{name}',[AdminController::class,'index']);
+
+/*Route::get('/home/{name}',function($name){
     return view('home',['name'=>$name]);
     //return "esto es home. Hola ".$name." bienvenido";
-})->where('name', '[A-Za-z]+');
+})->where('name', '[A-Za-z]+');*/
