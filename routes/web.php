@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/{name}',[AdminController::class,'index']);
+Route::get('/admin',function(){
+    return view('admin.index');
+});
+
+//Route::get('/admin/{name}',[AdminController::class,'index']);
 
 /*Route::get('/home/{name}',function($name){
     return view('home',['name'=>$name]);
