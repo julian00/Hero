@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EnemyController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin',function(){
-    return view('admin.index');
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',[AdminController::class,'index'])->name('admin');
+    Route::get('heroes',[HeroController::class,'index'])->name('admin.heroes');
+    Route::get('enemies',[EnemyController::class,'index'])->name('admin.enemies');
+    Route::get('items',[ItemController::class,'index'])->name('admin.items');
 });
 
 //Route::get('/admin/{name}',[AdminController::class,'index']);

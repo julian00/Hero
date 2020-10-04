@@ -9,6 +9,6 @@ class AdminController extends Controller
     public function index()//($name)
     {
         //return view('admin.index',['name'=>$name]);
-        return view('admin.idex');
+        return view('admin.index');
     }
 }
